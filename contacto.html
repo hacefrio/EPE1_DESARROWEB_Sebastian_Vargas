@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>MENU EPE 1</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>MENU EPE 1</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+          </head>
+          <body>
+
+
+    <header>
+        <h1 class="titulo">FORMULARIO DE CONTACTO </h1>
+    </header>
+
+    <section>
+ <!-- on click go to post.html-->
+ <form class="formulario">
+<!-- nombre, correo electrónico, dirección y comuna-->
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+      <div class="invalid-feedback">
+        INGRESA UN NOMBRE VALIDO.
+      </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="correo">Correo</label>
+        <input type="email" class="form-control" id="correo" aria-describedby="correo" placeholder="Ingresa tu correo"required>
+        <div class="invalid-feedback">
+          INGRESA UN CORREO VALIDO.
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="dirección">dirección</label>
+      <input type="text" class="form-control" id="dirección" placeholder="Ingresa tu dirección"required>
+      <div class="invalid-feedback">
+        INGRESA UNA DIRECCION VALIDA.
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="comuna">Comuna</label>
+        <select class="form-control" id="comuna" required>
+          <option>Selecciona tu comuna</option>
+          <option>Las Condes</option>
+          <option>Providencia</option>
+          <option>Ñuñoa</option>
+          <option>La Reina</option>
+          <option>Macul</option>
+          <option>La Florida</option>
+          <option>Peñalolén</option>
+          <option>La Granja</option>
+          <option>San Joaquín</option>
+          <option>San Miguel</option>
+          <option>La Cisterna</option>
+          <option>El Bosque</option>
+          <option>La Pintana</option>
+          <option>San Ramón </option>
+          </select> 
+          <div class="invalid-feedback">
+            INGRESA UNA COMUNA VALIDA.
+          </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+
+  </form>
+    </section>
+</main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.formulario').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const dirección = document.getElementById('dirección').value;
+            const comuna = document.getElementById('comuna').value;
+            if(comuna === 'Selecciona tu comuna' ){
+                alert('Selecciona una comuna');
+                return;
+            }
+
+            if (nombre === '' || correo === '' || dirección === '' || comuna === '') {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+            alert(`Nombre: ${nombre} \nCorreo: ${correo} \nDirección: ${dirección} \nComuna: ${comuna}`);
+
+        });
+    });
+
+
+
+
+
+    
+</script>
+</html>
